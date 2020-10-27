@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text: MyString
+  owner_uuid: MyString
+  date: MyString
+  entry: one
+
+two:
+  text: MyString
+  owner_uuid: MyString
+  date: MyString
+  entry: two

@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  issue: MyString
+  location: MyString
+  image: MyString
+  pain_level: 1
+  symptoms: MyString
+  symptom_onset: MyString
+  date_of_entry: MyString
+  patient: one
+
+two:
+  issue: MyString
+  location: MyString
+  image: MyString
+  pain_level: 1
+  symptoms: MyString
+  symptom_onset: MyString
+  date_of_entry: MyString
+  patient: two
