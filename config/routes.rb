@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :entries
   resources :patients
   resources :providers
-  resources :organizations
+  resources :organizations, only: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
