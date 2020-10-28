@@ -10,7 +10,7 @@ class ProvidersController < ApplicationController
         if provider 
             render json: provider
         else 
-            render json: { error: 'patient could not be found' }
+            render json: { error: 'provider could not be found' }
         end
     end
 
@@ -19,7 +19,7 @@ class ProvidersController < ApplicationController
         if provider.save
             render json: provider 
         else 
-            render json: { error: 'patient could not be created' }
+            render json: { error: 'provider could not be created' }
         end
     end
 
@@ -28,7 +28,7 @@ class ProvidersController < ApplicationController
         if provider.valid?
             render json: provider
         else 
-            render json: { error: 'patient could not be found' }
+            render json: { error: 'provider could not be found' }
         end
     end
 
@@ -36,7 +36,7 @@ class ProvidersController < ApplicationController
         if provider
             provider.delete
         else
-            render json: { error: 'patient could not be found' }
+            render json: { error: 'provider could not be found' }
         end
     end
 

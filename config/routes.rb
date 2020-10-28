@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :comments
-  resources :entries
+  resources :entries, only: [:index, :show, :create, :update, :destroy]
   resources :patients, only: [:index, :show, :create, :update, :destroy]
   resources :providers, only: [:index, :show, :create, :update, :destroy]
   resources :organizations, only: [:index, :show]
