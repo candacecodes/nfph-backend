@@ -17,7 +17,7 @@ class PatientsController < ApplicationController
     def create
         patient = Patient.new(patient_params)
         if patient.save
-            render json: user 
+            render json: patient 
         else 
             render json: { error: 'patient could not be created' }
         end
