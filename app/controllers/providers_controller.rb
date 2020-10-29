@@ -53,7 +53,7 @@ class ProvidersController < ApplicationController
 
     private
     def provider_params
-        params.require(:provider).permit(:email_address, :password, :name, :provider_uuid, :title, :field, :organization_id)
+        params.require(:provider).permit(:email_address, :password, :first_name, :last_name, :provider_uuid, :title, :field, :organization_id)
     end
 
     def find_provider

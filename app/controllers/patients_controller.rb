@@ -53,7 +53,7 @@ class PatientsController < ApplicationController
 
     private
     def patient_params
-        params.require(:patient).permit(:email_address, :password, :name, :patient_uuid, :diagnosis, :prescriptions, :organization_id)
+        params.require(:patient).permit(:email_address, :password, :first_name, :last_name, :patient_uuid, :diagnosis, :prescriptions, :organization_id)
     end
 
     def find_patient
