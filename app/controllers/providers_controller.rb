@@ -1,5 +1,6 @@
 class ProvidersController < ApplicationController
     before_action :find_provider, only: [:show, :update, :destroy]
+    before_action :authorized, only: [:update]
 
     def index
         providers = Provider.all
@@ -37,6 +38,16 @@ class ProvidersController < ApplicationController
             provider.delete
         else
             render json: { error: 'provider could not be found' }
+        end
+    end
+
+    def login
+        provider = Provider.find_by(email_address: params[:email_address])
+        if provider && provider.authenticate(params[:password])
+            token = encode_token({provider_uuid: provider.patient_uuid})
+            render json: {provider: provider, token: token}
+        else 
+            render json: {error: 'Incorrect Email or Password'}
         end
     end
 
