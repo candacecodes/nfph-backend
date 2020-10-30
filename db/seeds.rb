@@ -15,7 +15,7 @@ Organization.create(name: "University of Washington Medical Center - Montlake", 
 Organization.create(name: "Seattle Children's Hospital", location: 'Seattle, Washington', phone: '(206) 987-2016')
 
 Provider.create(first_name: 'firstname1', title: 'Title1', field: 'Field1', provider_uuid: '1', organization_id: 1, email_address: 'email1', password_digest: 'pw1', NPI_number: 1234567890, last_name: 'lastname1')
-# rails c Provider.all not showing up
+Provider.create(first_name: 'firstname2', title: 'Title2', field: 'Field2', provider_uuid: '2', organization_id: 2, email_address: 'email2', password_digest: 'pw2', NPI_number: 2234567890, last_name: 'lastname2')
 
 
 Patient.create(first_name: 'firstname1', patient_uuid: '1', diagnosis: 'diagnosis1', prescriptions: ['prescription1'], organization_id: 1, email_address: 'email1', password_digest: 'password1', last_name: 'lastname1')
