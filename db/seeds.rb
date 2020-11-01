@@ -14,6 +14,17 @@ Organization.create(name: "UCSF Benioff Children's Hospital", location: 'San Fra
 Organization.create(name: "University of Washington Medical Center - Montlake", location: 'Seattle, Washington', phone: '(206) 598-2282')
 Organization.create(name: "Seattle Children's Hospital", location: 'Seattle, Washington', phone: '(206) 987-2016')
 
-Patient.create(email_address: "ionabrabender@gmail.com", password: "123", name: "Iona", patient_uuid: 1, diagnosis: "none", prescriptions: "none", organization_id: 1)
+Provider.create(first_name: 'firstname1', title: 'Title1', field: 'Field1', provider_uuid: '1', organization_id: 1, email_address: 'email1', password_digest: 'pw1', NPI_number: 1234567890, last_name: 'lastname1')
+Provider.create(first_name: 'firstname2', title: 'Title2', field: 'Field2', provider_uuid: '2', organization_id: 2, email_address: 'email2', password_digest: 'pw2', NPI_number: 2234567890, last_name: 'lastname2')
+
+
+Patient.create(first_name: 'firstname1', patient_uuid: '1', diagnosis: 'diagnosis1', prescriptions: ['prescription1'], organization_id: 1, email_address: 'email1', password_digest: 'password1', last_name: 'lastname1')
+Patient.create(first_name: 'firstname2', patient_uuid: '2', diagnosis: 'diagnosis2', prescriptions: ['prescription2'], organization_id: 2, email_address: 'email2', password_digest: 'password2', last_name: 'lastname2')
+
+Entry.create(issue: 'issue1', location: 'location1', image: 'image1', pain_level: 'painlevel1', symptoms: 'symptom1', symptom_onset: 'symptomonset1', date_of_entry: 'dateofentry1', patient_id: 1)
+Entry.create(issue: 'issue2', location: 'location2', image: 'image2', pain_level: 'painlevel2', symptoms: 'symptom2', symptom_onset: 'symptomonset2', date_of_entry: 'dateofentry2', patient_id: 2)
+
+Comment.create(text: 'text1', owner_uuid: '1', date: 'date1', entry_id: 1)
+Comment.create(text: 'text2', owner_uuid: '2', date: 'date2', entry_id: 2)
 
 puts 'Seeds done!'

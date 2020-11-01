@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
     before_action :find_patient, only: [:show, :update, :destroy]
+    before_action :authorized, only: [:update]
 
     def index
         patients = Patient.all
@@ -40,9 +41,19 @@ class PatientsController < ApplicationController
         end
     end
 
+    def login
+        patient = Patient.find_by(email_address: params[:email_address])
+        if patient && patient.authenticate(params[:password])
+            token = encode_token({patient_uuid: patient.patient_uuid})
+            render json: {patient: patient, token: token}
+        else 
+            render json: {error: 'Incorrect Email or Password'}
+        end
+    end
+
     private
     def patient_params
-        params.require(:patient).permit(:email_address, :password, :name, :patient_uuid, :diagnosis, :prescriptions, :organization_id)
+        params.require(:patient).permit(:email_address, :password, :first_name, :last_name, :patient_uuid, :diagnosis, :prescriptions, :organization_id)
     end
 
     def find_patient

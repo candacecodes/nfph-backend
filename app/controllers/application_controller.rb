@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
 
     def encode_token(payload)
-        JWT.encode(payload, '50-state-voyage')
+        JWT.encode(payload, 'NFPH')
     end
 
     def auth_header
@@ -12,7 +12,7 @@ class ApplicationController < ActionController::API
         if auth_header
             token = auth_header.split(' ')[1]
             begin
-                JWT.decode(token, '50-state-voyage', true, algorithm: 'HS256')
+                JWT.decode(token, 'NFPH', true, algorithm: 'HS256')
             rescue JWT::DecodeError
                 nil
             end

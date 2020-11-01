@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_29_181451) do
+ActiveRecord::Schema.define(version: 2020_10_29_230539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_10_29_181451) do
   end
 
   create_table "patients", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
     t.string "patient_uuid"
     t.string "diagnosis"
     t.string "prescriptions", default: [], array: true
@@ -57,11 +57,12 @@ ActiveRecord::Schema.define(version: 2020_10_29_181451) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "email_address"
     t.string "password_digest"
+    t.string "last_name"
     t.index ["organization_id"], name: "index_patients_on_organization_id"
   end
 
   create_table "providers", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
     t.string "title"
     t.string "field"
     t.string "provider_uuid"
@@ -71,6 +72,7 @@ ActiveRecord::Schema.define(version: 2020_10_29_181451) do
     t.string "email_address"
     t.string "password_digest"
     t.integer "NPI_number"
+    t.string "last_name"
     t.index ["organization_id"], name: "index_providers_on_organization_id"
   end
 
