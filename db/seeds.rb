@@ -14,4 +14,6 @@ Organization.create(name: "UCSF Benioff Children's Hospital", location: 'San Fra
 Organization.create(name: "University of Washington Medical Center - Montlake", location: 'Seattle, Washington', phone: '(206) 598-2282')
 Organization.create(name: "Seattle Children's Hospital", location: 'Seattle, Washington', phone: '(206) 987-2016')
 
+Patient.create(email_address: "ionabrabender@gmail.com", password: "123", name: "Iona", patient_uuid: 1, diagnosis: "none", prescriptions: "none", organization_id: 1)
+
 puts 'Seeds done!'
