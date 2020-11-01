@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
     before_action :find_entry, only: [:show, :update, :destroy]
 
     def index
-        enries = Entry.all
+        entries = Entry.all
         render json: entries
     end
 
