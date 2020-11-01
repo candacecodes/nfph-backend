@@ -1,5 +1,6 @@
 class ProvidersController < ApplicationController
     before_action :find_provider, only: [:show, :update, :destroy]
+    before_action :authorized, only: [:update]
 
     def index
         providers = Provider.all
@@ -40,9 +41,19 @@ class ProvidersController < ApplicationController
         end
     end
 
+    def login
+        provider = Provider.find_by(email_address: params[:email_address])
+        if provider && provider.authenticate(params[:password])
+            token = encode_token({provider_uuid: provider.patient_uuid})
+            render json: {provider: provider, token: token}
+        else 
+            render json: {error: 'Incorrect Email or Password'}
+        end
+    end
+
     private
     def provider_params
-        params.require(:provider).permit(:email_address, :password, :name, :provider_uuid, :title, :field, :organization_id)
+        params.require(:provider).permit(:email_address, :password, :first_name, :last_name, :NPI_number, :provider_uuid, :title, :field, :organization_id)
     end
 
     def find_provider

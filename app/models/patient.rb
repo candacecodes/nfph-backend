@@ -6,4 +6,6 @@ class Patient < ApplicationRecord
   has_secure_password
   has_secure_password :recovery_password, validations: false
 
+  validates :patient_uuid, :email_address, uniqueness: true
+  validates :first_name, :last_name, :patient_uuid, :organization_id, :email_address, presence: true
 end
