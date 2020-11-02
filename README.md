@@ -1,4 +1,4 @@
-# Neurofibromatosis Personalized Health: NF symptom tracker app with gold standard mobile testing 
+# Neurofibromatosis Personalized Health: NF symptom tracker app 
 
 # README
 
