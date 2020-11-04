@@ -17,8 +17,10 @@ class PatientsController < ApplicationController
 
     def create
         patient = Patient.new(patient_params)
+        debugger
         if patient.save
-            render json: patient 
+            token = encode_token({patient_uuid: patient.patient_uuid})
+            render json: {patient: patient, token: token}
         else 
             render json: { error: 'patient could not be created' }
         end
@@ -53,7 +55,7 @@ class PatientsController < ApplicationController
 
     private
     def patient_params
-        params.require(:patient).permit(:email_address, :password, :first_name, :last_name, :patient_uuid, :diagnosis, :prescriptions, :organization_id)
+        params.permit(:email_address, :password, :first_name, :last_name, :patient_uuid, :diagnosis, :prescriptions, :organization_id)
     end
 
     def find_patient
