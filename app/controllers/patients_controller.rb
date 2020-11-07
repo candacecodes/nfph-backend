@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
     before_action :find_patient, only: [:show, :update, :destroy]
-    before_action :authorized, only: [:persist, :update]
+    before_action :authorized, only: [:persist]
 
     def index
         patients = Patient.all
@@ -17,7 +17,6 @@ class PatientsController < ApplicationController
 
     def create
         patient = Patient.new(patient_params)
-        debugger
         if patient.save
             token = encode_token({patient_uuid: patient.patient_uuid})
             render json: {patient: patient, token: token}
