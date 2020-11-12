@@ -53,7 +53,7 @@ class ProvidersController < ApplicationController
     end
 
     def persist
-        token = encode_token({provider_uuid: @provider.patient_uuid})
+        token = encode_token({provider_uuid: @provider.provider_uuid})
         render json: {provider: @provider, token: token}
     end
 
