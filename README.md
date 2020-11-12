@@ -1,4 +1,4 @@
-# Neurofibromatosis Personalized Health: NF symptom tracker app 
+Neurofibromatosis Personalized Health: NF symptom tracker app with hearing test
 
 # README
 
