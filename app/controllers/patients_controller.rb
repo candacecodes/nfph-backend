@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
     before_action :find_patient, only: [:show, :update, :destroy]
-    before_action :authorized, only: [:update]
+    before_action :authorized, only: [:persist]
 
     def index
         patients = Patient.all
@@ -8,8 +8,8 @@ class PatientsController < ApplicationController
     end
 
     def show
-        if patient 
-            render json: patient
+        if @patient 
+            render json: @patient
         else 
             render json: { error: 'patient could not be found' }
         end
@@ -18,24 +18,25 @@ class PatientsController < ApplicationController
     def create
         patient = Patient.new(patient_params)
         if patient.save
-            render json: patient 
+            token = encode_token({patient_uuid: patient.patient_uuid})
+            render json: {patient: patient, token: token}
         else 
             render json: { error: 'patient could not be created' }
         end
     end
 
     def update
-        patient.update(patient_params)
-        if patient.valid?
-            render json: patient
+        @patient.update(patient_params)
+        if @patient.valid?
+            render json: @patient
         else 
             render json: { error: 'patient could not be found' }
         end
     end
 
     def destroy
-        if patient
-            patient.delete
+        if @patient
+            @patient.delete
         else
             render json: { error: 'patient could not be found' }
         end
@@ -51,12 +52,17 @@ class PatientsController < ApplicationController
         end
     end
 
+    def persist
+        token = encode_token({patient_uuid: @patient.patient_uuid})
+        render json: {patient: @patient, token: token}
+    end
+
     private
     def patient_params
-        params.require(:patient).permit(:email_address, :password, :first_name, :last_name, :patient_uuid, :diagnosis, :prescriptions, :organization_id)
+        params.permit(:email_address, :password, :first_name, :last_name, :patient_uuid, :diagnosis, :prescriptions, :organization_id)
     end
 
     def find_patient
-        patient = Patient.find(params[:id])
+        @patient = Patient.find(params[:id])
     end
 end
