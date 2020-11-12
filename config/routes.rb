@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   post '/patient-login', to: 'patients#login'
   get '/patient-persist', to: 'patients#persist'
   post '/provider-login', to: 'providers#login'
+  get '/provider-persist', to: 'providers#persist'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
