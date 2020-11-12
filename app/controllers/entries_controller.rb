@@ -7,8 +7,9 @@ class EntriesController < ApplicationController
     end
 
     def show
-        if entry 
-            render json: entry
+        @entry = Entry.find(params[:id])
+        if @entry 
+            render json: @entry
         else 
             render json: { error: 'entry could not be found' }
         end
@@ -24,17 +25,19 @@ class EntriesController < ApplicationController
     end
 
     def update
-        entry.update(entry_params)
-        if entry.valid?
-            render json: entry
+        @entry = Entry.find(params[:id])
+        @entry.update(entry_params)
+        if @entry.valid?
+            render json: @entry
         else 
             render json: { error: 'entry could not be found' }
         end
     end
 
     def destroy
-        if entry
-            entry.delete
+        @entry = Entry.find(params[:id])
+        if @entry
+            @entry.delete
         else
             render json: { error: 'entry could not be found' }
         end
