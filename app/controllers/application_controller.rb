@@ -21,8 +21,13 @@ class ApplicationController < ActionController::API
 
     def current_user
         if decoded_token
-            user_id = decoded_token[0]['user_id']
-            @user = User.find_by(id: user_id)
+            if decoded_token[0]['patient_uuid']
+                patient_uuid = decoded_token[0]['patient_uuid']
+                @patient = Patient.find_by(patient_uuid: patient_uuid)
+            elsif decoded_token[0]['provider_uuid']
+                provider_uuid = decoded_token[0]['provider_uuid']
+                @provider = Provider.find_by(provider_uuid: provider_uuid)
+            end
         end
     end
 
