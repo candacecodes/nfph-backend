@@ -14,9 +14,9 @@ When meeting with a patient mentor (NF2), we asked them what their concerns were
 We built an app specific to NF symptom tracking, with a built-in hearing test, so users have an at-home resource to measure hearing aptitude progression over time. Additionally, we aimed to open the platform to providers, giving them real-time updates and allowing them to quickly share feedback with their patients.
 
 ### Result
-Users now have a personalized entry-logging system and more autonomy over tracking their hearing progression and other symptoms.
+Users now have a personalized entry-logging system and more autonomy over tracking their hearing progression and other symptoms. Neurofibromatosis Personalized Health also helps to build stronger relationships between doctors and patients and supports further research in treating neurofibromatosis.
 
-**To see the full demo, click [here](https://youtu.be/4suu2q9dEh0)
+**To see the full demo, click [here](https://www.youtube.com/watch?v=4suu2q9dEh0&feature=youtu.be).**
 
 
 ## Installation
