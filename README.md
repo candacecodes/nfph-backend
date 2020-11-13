@@ -63,7 +63,13 @@ npm start               # to open the app in your browser
     <li>Add comments to patient entries.</li>
 </ul>
 
+## Future Scope
 
+ [ ] Patient opt-in option to share their data with researchers
+ [ ] Researcher portal + statistics analytics
+ [ ] Quick chat feature
+ [ ] Calendar showing provider availability and appointment booking option
+ 
 ## Developers
 
 **Candace Choe**<br>
