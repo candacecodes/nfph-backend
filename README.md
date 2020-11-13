@@ -56,10 +56,6 @@ npm start               # to open the app in your browser
 </ul>
 
 
-<br>
-
-<br>
-
 ### Providers Can:
 <ul>
     <li>Sign up or log in.</li>
@@ -67,11 +63,26 @@ npm start               # to open the app in your browser
     <li>Add comments to patient entries.</li>
 </ul>
 
-<br>
 
-<br>
+## Future Scope
 
+ [ ] Patient opt-in option to share their data with researchers
+ 
+ [ ] Researcher portal + statistics analytics
+ 
+ [ ] Quick chat feature
+ 
+ [ ] Calendar showing provider availability and appointment booking option
+ 
+ [ ] Add reminders - help remind you to add in entries or updates on concerning symptoms
+ 
+ [ ] Add new tests based on user feedback
+ 
+ [ ] Create reference measurements when users take pictures of their spots (e.g. Hold a quarter next to the spot when taking picture)
+ 
+ 
 
+ 
 ## Developers
 
 **Candace Choe**<br>
