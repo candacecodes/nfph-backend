@@ -63,6 +63,7 @@ npm start               # to open the app in your browser
     <li>Add comments to patient entries.</li>
 </ul>
 
+
 ## Future Scope
 
  [ ] Patient opt-in option to share their data with researchers
@@ -73,6 +74,14 @@ npm start               # to open the app in your browser
  
  [ ] Calendar showing provider availability and appointment booking option
  
+ [ ] Add reminders - help remind you to add in entries or updates on concerning symptoms
+ 
+ [ ] Add new tests based on user feedback
+ 
+ [ ] Create reference measurements when users take pictures of their spots (e.g. Hold a quarter next to the spot when taking picture)
+ 
+ 
+
  
 ## Developers
 
